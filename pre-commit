@@ -1,5 +1,4 @@
 #!/bin/sh
-#
 
 echo 'Cleaning up package-lock.json'
 sed -i -e '/https:\/\/otuvy/,+1d' package-lock.json
