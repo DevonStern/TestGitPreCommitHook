@@ -2,4 +2,7 @@
 
 echo 'Cleaning up package-lock.json'
 sed -i -e '/https:\/\/otuvy/,+1d' package-lock.json
-git add package-lock.json
+# Only stage the changes if it's already in the staged files (if you didn't want the file staged, don't stage it)
+# This will still pull in any changes to the file if you only staged part of the file, but it's a pretty good compromise
+# And seriously, who only stages part of the package-lock.json file?
+git update-index --again package-lock.json
